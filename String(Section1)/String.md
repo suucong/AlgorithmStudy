@@ -34,3 +34,20 @@
 - 소문자: 65~90
 - 대문자: 97~122
 - 소문자와 대문자의 아스키코드 차이: 97-65=32
+
+### 📌 String 속 단어
+- String[] split(String regex)
+    - regex라는 문자열을 기준으로 String 배열을 만들어주는 메서드
+    #### subString()
+    - String substring(int beginIndex)
+        - beginIndex전까지의 문자열을 자르고 그 뒤의 문자열만 반환
+    - String substring(int beginIndex, int endIndex)        
+        - beginIndex의 문자열부터 endIndex-1까지의 문자열을 잘라서 반환
+    #### indexOf()
+    - indexOf(String str): 특정 문자나 문자열이 앞에서부터 처음 발견되는 인덱스를 반환하며
+    만약 찾지 못했을 경우 "-1"을 반환
+    - lastIndexOf(String str): 특정 문자나 문자열이 "뒤에서부터" 처음 발견되는 인덱스를 반환하며
+    만약 찾지 못했을 경우 "-1"을 반환
+    #### length()
+    - length: 배열 원소의 수를 알고 싶을 때 사용
+    - length(): 문자열의 문자의 수를 알고 싶을 때 사용
