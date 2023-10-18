@@ -85,7 +85,15 @@
     answer[0] = "첫 번째 항목";
     answer[1] = "두 번째 항목";
     ```
-### String.valueOf(s) vs toString()
+### 📌 String.valueOf(s) vs toString()
 - Null 값에 따른 NPE(NullPointerException)
 - String.valueOf() - 파라미터가 null이면 문자열 "null"을 만들어서 반환한다.
-- toString() - 대상 값이 null이면 NPE를 발생시키고 Object에 담긴 값이 String이 아니여도 출력한다.
+- toString() - 이 메서드를 사용하면 배열 전체가 문자열로 변환되지 않고, 배열의 "해시 코드"를 반환한다. 
+
+### 📌 Character.isAlphabetic() vs Character.isLetter()
+#### Character.isAlphabetic(char ch)  
+- 주어진 문자 ch가 유니코드에서 "문자"의 범주에 속하는지의 여부를 확인
+- 문자 범주 중에서 문자로 분류되는 모든 문자를 포함.(알파벳, 음절, 음성 기호.. 알파벳이 아니더라도 알파벳을 제외한 언어도 포함)
+#### Character.isLetter()  
+- 주어진 문자 ch가 유니코드에서 "알파벳 문자"에 속하는지 여부를 확인
+- 알파벳 문자에만 초점을 맞추고, 음절, 음성, 기타 기호는 false를 반환
