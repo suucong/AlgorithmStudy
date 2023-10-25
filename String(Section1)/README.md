@@ -85,24 +85,6 @@
     answer[0] = "첫 번째 항목";
     answer[1] = "두 번째 항목";
     ```
-### 📌 String.valueOf(s) vs toString()
-- Null 값에 따른 NPE(NullPointerException)
-- String.valueOf() - 파라미터가 null이면 문자열 "null"을 만들어서 반환한다.
-- toString() - 이 메서드를 사용하면 배열 전체가 문자열로 변환되지 않고, 배열의 "해시 코드"를 반환한다. 
-
-### 📌 Character.isAlphabetic() vs Character.isLetter()
-#### Character.isAlphabetic(char ch)  
-- 주어진 문자 ch가 유니코드에서 "문자"의 범주에 속하는지의 여부를 확인
-- 문자 범주 중에서 문자로 분류되는 모든 문자를 포함.(알파벳, 음절, 음성 기호.. 알파벳이 아니더라도 알파벳을 제외한 언어도 포함)
-#### Character.isLetter(char ch)  
-- 주어진 문자 ch가 유니코드에서 "알파벳 문자"에 속하는지 여부를 확인
-- 알파벳 문자에만 초점을 맞추고, 음절, 음성, 기타 기호는 false를 반환
-### 📌 중복된 문자 확인하기
-```    
-    for(int i = 0; i < str.length(); i++) {
-        if(i == str.indexOf(str.charAt(i)))
-    }
-```
 - indexOf는 파라미터 안의 문자가 첫번째로 있는 인덱스를 반환한다. 만약 이 인덱스 번호와 현재 인덱스 번호가 다르다면, 그건 중복된 문자열이다. 
 
 ### 📌 equalsIgnoreCase(String str)
@@ -110,3 +92,32 @@
 
 ### 📌 replaceAll("[^A-Z]", ""): 알파벳을 제외한 모든 문자 제거
 - 알파벳을 제외한 모든 다른 문자들을 제거해주고, 그 문자열을 반환하는 메서드와 파라미터 값이다.
+
+## 🔗 클래스 안의 메서드 정리
+
+### 📌 String 클래스의 여러 메서드들
+- String.valueOf(s): s를 문자열로 변환하여 반환해준다. 파라미터가 null이면 문자열 "null"을 return, boolean일 경우 true이면 "true", false이면 "false"를 return.(추가적으로, str.toString(): 이 메서드를 사용하면 배열 전체가 문자열로 변환되지 않고, 배열의 "해시 코드"를 반환한다.) 
+
+### 📌 Character 클래스의 여러 메서드들
+- Character.isAlphabetic(char ch): 주어진 문자 ch가 유니코드에서 "문자"의 범주에 속하는지의 여부를 확인. 문자 범주 중에서 문자로 분류되는 모든 문자를 포함.(알파벳, 음절, 음성 기호.. 알파벳이 아니더라도 알파벳을 제외한 언어도 포함)
+- Character.isLetter(char ch): 주어진 문자 ch가 유니코드에서 "알파벳 문자"에 속하는지 여부를 확인. 알파벳 문자에만 초점을 맞추고, 음절, 음성, 기타 기호는 false를 반환.
+- Character.isDigit(char ch): 주어진 문자 ch가 유니코드에서 "숫자(0-9)"에 속하는지의 여부를 확인. 
+
+### 📌 Integer 클래스의 여러 메서드들
+- Integer.parseInt(String s): s가 숫자인 경우에는 숫자를 반환한다. 만약 숫자가 아니면 NumberFormatException 예외를 던지므로 예외처리를 해주어야 한다. 
+
+## 🔗 강의에서 본 나와 다르게 푼 방법 정리
+### 📌 중복된 문자 확인하기
+```    
+for(int i = 0; i < str.length(); i++) {
+    if(i == str.indexOf(str.charAt(i)))
+}
+```
+
+### 📌 String에서 추출한 숫자를 자연수로 만들어주기
+- 추출한 문자열이 "000129"라고 했을 때, 자연수로 변환하여 출력하여야 하는 경우, 에는 129만 출력되어야 한다. 그때는 아래처럼 처리해줄 수 있다. (물론, Integer.parseInt 메서드 사용도 가능^^)
+```
+for(char c : str.toCharArray()) {
+    if(x>=48 && x<=57)  answer += answer*10 + (x-48);
+} 
+```
