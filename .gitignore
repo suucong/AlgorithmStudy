@@ -1,3 +1,6 @@
-
 String(Section1)/.DS_Store
 .DS_Store
+
+### InteliJ ###
+.idea
+*.iml
