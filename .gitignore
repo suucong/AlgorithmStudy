@@ -4,3 +4,4 @@ String(Section1)/.DS_Store
 ### InteliJ ###
 .idea
 *.iml
+out
