@@ -91,8 +91,10 @@
 ### 📌 equalsIgnoreCase(String str)
 - equals(String str)과 비슷한 역할을 하는 메서드로, equals는 대소문자 구분을 하는 대신에, 이 메서드는 대소문자가 달라도 알파벳만 같으면 true를 반환한다. 
 
-### 📌 replaceAll("[^A-Z]", ""): 알파벳을 제외한 모든 문자 제거
-- 알파벳을 제외한 모든 다른 문자들을 제거해주고, 그 문자열을 반환하는 메서드와 파라미터 값이다.
+### 📌 String replace(char oldChar, char newChar), String replaceAll(String regex, String replacement)
+- replaceAll("[^A-Z]", ""): 알파벳을 제외한 모든 다른 문자들을 제거해주고, 그 문자열을 반환하는 메서드와 파라미터 값이다.
+- replace(char oldChar, char newChar): 문자열 안의 특정 char 값을 원하는 char값들로 바꿀 수 있다. 
+- replaceAll과 replace의 차이점: replaceAll은 바꿔주고 싶은 값들을 정규식으로 표현 가능하고, 입력 값이 String이지만 replace는 char을 입력하면 한개의 문자 밖에 지정해주지 못한다. 
 
 ## 🔗 클래스 안의 메서드 정리
 
@@ -105,7 +107,8 @@
 - Character.isDigit(char ch): 주어진 문자 ch가 유니코드에서 "숫자(0-9)"에 속하는지의 여부를 확인. 
 
 ### 📌 Integer 클래스의 여러 메서드들
-- Integer.parseInt(String s): s가 숫자인 경우에는 숫자를 반환한다. 만약 숫자가 아니면 NumberFormatException 예외를 던지므로 예외처리를 해주어야 한다. 
+- Integer.parseInt(String s): s가 숫자인 경우에는 숫자를 반환한다. 만약 숫자가 아니면 NumberFormatException 예외를 던지므로 예외처리를 해주어야 한다.
+- 특정 진수에서 10진수로 변환: Integer.parseInt(String s, Integer radix)메서드를 통해서 특정 진수를 10진수로 변환 가능. radix를 통해 몇 진수인지를 명시해준다.
 
 ## 🔗 강의에서 본 나와 다르게 푼 방법 정리
 ### 📌 중복된 문자 확인하기
