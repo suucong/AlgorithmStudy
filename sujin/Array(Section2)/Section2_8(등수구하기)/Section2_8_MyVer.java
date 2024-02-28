@@ -6,7 +6,7 @@ public class Section2_8_MyVer {
         String answer = "";
         int sortList[] = Arrays.copyOf(list, n);
 
-        // 선택정렬을 이용하여 오름차순 정렬
+        // 선택정렬을 이용하여 내림차순 정렬
         for(int i = 0; i < n; i++) {
             int biggest = i;
             for(int j = i; j < n; j++) {
