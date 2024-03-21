@@ -6,7 +6,7 @@ public class Section5_5_MyVer {
         int answer = 0;
         Stack<Integer> stack = new Stack<>();
         char[] cList = str.toCharArray();
-        stack.push(-1);
+        stack.push(0);
         for(int i = 1; i < cList.length; i++) {
             if(cList[i] == '(') stack.push(0);
             else {
