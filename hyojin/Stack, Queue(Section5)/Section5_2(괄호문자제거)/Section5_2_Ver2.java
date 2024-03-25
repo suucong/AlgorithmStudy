@@ -1,0 +1,25 @@
+package Section5_2;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Section5_2_Ver2 {
+    public String solution(String str) {
+        String answer = "";
+        Stack<Character> st = new Stack<>();
+        for (char x : str.toCharArray()) {
+            if (x == ')') {
+                while (st.pop() != '(') ;
+            } else st.push(x);
+        }
+        for (int i = 0; i < st.size(); i++) answer += st.get(i);
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Section5_2_Ver2 t = new Section5_2_Ver2();
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.next();
+        System.out.println(t.solution(str));
+    }
+}
