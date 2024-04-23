@@ -1,4 +1,4 @@
-요class Node {
+class Node {
     int data;
     Node lt, rt;
 
