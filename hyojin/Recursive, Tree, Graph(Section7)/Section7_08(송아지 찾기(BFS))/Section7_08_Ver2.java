@@ -20,9 +20,9 @@ public class Section7_08_Ver2 {
             int len = Q.size();
             for (int i = 0; i < len; i++) {
                 int x = Q.poll();
-                if (x == e) return L;
                 for (int j = 0; j < 3; j++) {
                     int nx = x + dis[j];
+                    if (nx == e) return L;
                     if (nx >= 1 && nx <= 1000 && ch[nx] == 0) {
                         ch[nx] = 1;
                         Q.offer(nx);
