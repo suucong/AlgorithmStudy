@@ -1,2 +1,1 @@
-# Algorithm_Java
-Java Algorithm Study
+# Algorithm Study(Java, Python)
